@@ -4,7 +4,7 @@
 
 A polished, responsive smart-home operations dashboard for monitoring connected devices, climate signals, power consumption, and system alerts at a glance.
 
-**[View the live demo](https://your-username.github.io/iot-dashboard/)** *(replace with your GitHub Pages URL)*
+**[View the live demo](https://242ta02014-alt.github.io/Smart-IoT-Device-Monitoring-Dashboard/)
 
 ## Screenshot
 
@@ -55,13 +55,13 @@ iot-dashboard/
 
 ## Author
 
-**Jordan Davis**
+**kavitha**
 
 Replace the links below with your own portfolio and contact details before publishing.
 
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/your-profile/)
-- Email: [hello@example.com](mailto:hello@example.com)
+- GitHub: [@your-username]https://github.com/242ta02014-alt
+- LinkedIn: [Your LinkedIn]https://www.linkedin.com/in/seluvugari-kavitha-7487623aa?utm_source=share_via&utm_content=profile&utm_medium=member_android
+- Email: [242ta02014@ashokacollege.in)
 
 ## License
 
