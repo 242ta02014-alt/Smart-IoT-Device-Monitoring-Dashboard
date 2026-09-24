@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A real-time smart home IoT device monitoring dashboard.">
+  <title>Pulseboard | Smart IoT Monitoring</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#dashboard" aria-label="Pulseboard home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>pulseboard</span>
+      </a>
+
+      <div class="workspace-switcher">
+        <span class="workspace-avatar">LH</span>
+        <span class="workspace-copy"><strong>Loft House</strong><small>Personal space</small></span>
+        <button class="icon-button small" type="button" aria-label="Switch workspace">⌄</button>
+      </div>
+
+      <nav class="main-nav">
+        <p class="nav-label">Workspace</p>
+        <a class="nav-item active" href="#dashboard" aria-current="page"><span class="nav-icon" aria-hidden="true">⌂</span>Dashboard</a>
+        <a class="nav-item" href="#devices"><span class="nav-icon" aria-hidden="true">◈</span>Devices <span class="nav-count">8</span></a>
+        <a class="nav-item" href="#alerts"><span class="nav-icon" aria-hidden="true">◌</span>Alerts <span class="nav-count alert-count">3</span></a>
+        <a class="nav-item" href="#analytics"><span class="nav-icon" aria-hidden="true">▥</span>Analytics</a>
+        <p class="nav-label nav-label-spaced">Manage</p>
+        <a class="nav-item" href="#settings"><span class="nav-icon" aria-hidden="true">⚙</span>Settings</a>
+        <a class="nav-item" href="#help"><span class="nav-icon" aria-hidden="true">?</span>Help center</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sync-status"><span class="status-dot online"></span><span><strong>Cloud sync active</strong><small>Updated just now</small></span></div>
+        <button class="profile-button" type="button" aria-label="Open profile menu"><span class="profile-avatar">JD</span><span class="profile-copy"><strong>Jordan Davis</strong><small>Administrator</small></span><span class="more-dots">•••</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" type="button" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong>Overview</strong></div>
+        <div class="topbar-actions">
+          <span class="last-updated"><span class="status-dot online"></span>Live data <time id="last-updated">just now</time></span>
+          <button class="icon-button" type="button" aria-label="Search">⌕</button>
+          <button class="icon-button notification-button" type="button" aria-label="View notifications"><span>♧</span><i></i></button>
+          <button class="topbar-avatar" type="button" aria-label="Open user menu">JD</button>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="welcome-row" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">Thursday, September 24, 2026</p>
+            <h1 id="page-title">Good afternoon, Jordan <span aria-hidden="true">✦</span></h1>
+            <p class="subtitle">Here’s what’s happening across your connected home.</p>
+          </div>
+          <div class="header-actions">
+            <button class="button button-secondary" type="button"><span aria-hidden="true">⇩</span> Export report</button>
+            <button class="button button-primary" type="button"><span aria-hidden="true">＋</span> Add device</button>
+          </div>
+        </section>
+
+        <section class="summary-grid" aria-label="Home summary">
+          <article class="summary-card accent-teal"><div class="summary-icon">◈</div><div><span class="summary-label">Total devices</span><strong>08</strong><small><b class="positive">+2</b> this month</small></div><span class="summary-sparkline teal">╱╲╱╲</span></article>
+          <article class="summary-card accent-blue"><div class="summary-icon">◒</div><div><span class="summary-label">Online now</span><strong id="online-count">07</strong><small><b class="positive">87.5%</b> uptime</small></div><span class="summary-sparkline blue">╲╱╲╱</span></article>
+          <article class="summary-card accent-amber"><div class="summary-icon">♧</div><div><span class="summary-label">Active alerts</span><strong id="alert-count">03</strong><small><b class="warning-text">2 need attention</b></small></div><span class="summary-sparkline amber">╱╱╲╱</span></article>
+          <article class="summary-card accent-purple"><div class="summary-icon">ϟ</div><div><span class="summary-label">Energy today</span><strong><span id="energy-total">12.8</span><em> kWh</em></strong><small><b class="positive">↓ 8.4%</b> vs. yesterday</small></div><span class="summary-sparkline purple">╲╱╱╲</span></article>
+        </section>
+
+        <section class="content-grid" id="devices">
+          <div class="devices-panel panel">
+            <div class="panel-heading"><div><p class="section-kicker">Your network</p><h2>Devices <span class="heading-count">8 connected</span></h2></div><button class="text-button" type="button">View all <span aria-hidden="true">→</span></button></div>
+            <div class="device-grid">
+              <article class="device-card" data-device="living-room"><div class="device-card-top"><span class="device-icon temperature">♨</span><span class="device-status online"><i></i>Online</span></div><h3>Living Room Sensor</h3><p class="device-location">Living room · Climate</p><div class="metric-row"><strong><span data-metric="temperature">22.4</span><sup>°C</sup></strong><span class="metric-trend positive">↑ 1.2%</span></div><div class="device-footer"><span>Temperature</span><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i></span></div></article>
+              <article class="device-card" data-device="thermostat"><div class="device-card-top"><span class="device-icon thermostat">◉</span><span class="device-status online"><i></i>Online</span></div><h3>Smart Thermostat</h3><p class="device-location">Hallway · Climate</p><div class="metric-row"><strong><span data-metric="humidity">48</span><sup>%</sup></strong><span class="metric-trend positive">↓ 3.1%</span></div><div class="device-footer"><span>Humidity</span><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i></span></div></article>
+              <article class="device-card" data-device="camera"><div class="device-card-top"><span class="device-icon camera">◉</span><span class="device-status online"><i></i>Online</span></div><h3>Security Camera</h3><p class="device-location">Front door · Security</p><div class="metric-row"><strong><span data-metric="camera">24</span><sup>°C</sup></strong><span class="metric-trend neutral">Stable</span></div><div class="device-footer"><span>Ambient temp.</span><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i></span></div></article>
+              <article class="device-card" data-device="water"><div class="device-card-top"><span class="device-icon water">≈</span><span class="device-status warning"><i></i>Warning</span></div><h3>Water Meter</h3><p class="device-location">Utility room · Utilities</p><div class="metric-row"><strong><span data-metric="water">2.4</span><sup>L/min</sup></strong><span class="metric-trend warning-text">↑ 12.6%</span></div><div class="device-footer"><span>Flow rate</span><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i></span></div></article>
+              <article class="device-card" data-device="plug"><div class="device-card-top"><span class="device-icon plug">ϟ</span><span class="device-status offline"><i></i>Offline</span></div><h3>Smart Plug</h3><p class="device-location">Office · Energy</p><div class="metric-row"><strong><span data-metric="power">0</span><sup>W</sup></strong><span class="metric-trend neutral">Disconnected</span></div><div class="device-footer"><span>Power usage</span><span class="mini-bars muted"><i></i><i></i><i></i><i></i><i></i></span></div></article>
+              <article class="device-card add-device-card"><button type="button" aria-label="Add a new device"><span class="add-icon">＋</span><strong>Add new device</strong><small>Connect another device</small></button></article>
+            </div>
+          </div>
+
+          <aside class="alerts-panel panel" id="alerts">
+            <div class="panel-heading"><div><p class="section-kicker">Keep an eye out</p><h2>Recent alerts <span class="live-pulse"></span></h2></div><button class="icon-button small" type="button" aria-label="Alert options">•••</button></div>
+            <div class="alert-list" id="alert-list">
+              <article class="alert-item warning-alert"><span class="alert-icon">!</span><div><strong>Battery low on Door Sensor</strong><p>Battery level is below 20%.</p><time>12 min ago</time></div><button class="dismiss-alert" type="button" aria-label="Dismiss battery alert">×</button></article>
+              <article class="alert-item info-alert"><span class="alert-icon">◉</span><div><strong>Motion detected at 3:42 PM</strong><p>Front door camera detected movement.</p><time>28 min ago</time></div><button class="dismiss-alert" type="button" aria-label="Dismiss motion alert">×</button></article>
+              <article class="alert-item success-alert"><span class="alert-icon">✓</span><div><strong>Water usage back to normal</strong><p>Flow rate returned to expected range.</p><time>1 hr ago</time></div><button class="dismiss-alert" type="button" aria-label="Dismiss water alert">×</button></article>
+            </div>
+            <button class="view-alerts" type="button">View all alerts <span aria-hidden="true">→</span></button>
+          </aside>
+        </section>
+
+        <section class="analytics-grid" id="analytics">
+          <article class="chart-panel panel"><div class="panel-heading"><div><p class="section-kicker">Indoor climate</p><h2>Temperature overview</h2></div><select aria-label="Temperature time range"><option>Last 24 hours</option><option>Last 7 days</option></select></div><div class="chart-meta"><strong>22.4°C</strong><span class="positive">↑ 1.2% from yesterday</span></div><div class="canvas-wrap"><canvas id="temperature-chart" aria-label="Line chart showing indoor temperature over the last 24 hours" role="img"></canvas></div></article>
+          <article class="chart-panel panel"><div class="panel-heading"><div><p class="section-kicker">Power consumption</p><h2>Energy usage</h2></div><select aria-label="Energy time range"><option>This week</option><option>This month</option></select></div><div class="chart-meta"><strong>12.8 <em>kWh</em></strong><span class="positive">↓ 8.4% vs. last week</span></div><div class="canvas-wrap"><canvas id="energy-chart" aria-label="Bar chart showing energy usage this week" role="img"></canvas></div></article>
+        </section>
+        <footer class="page-footer"><span>Pulseboard Home OS <b>•</b> v2.4.1</span><span>All systems monitored <span class="status-dot online"></span></span></footer>
+      </div>
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
